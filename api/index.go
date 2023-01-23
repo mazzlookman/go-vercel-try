@@ -2,10 +2,8 @@ package handler
 
 import (
 	"fmt"
-	"net/http"
-	"os"
-
 	. "github.com/tbxark/g4vercel"
+	"net/http"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
@@ -13,7 +11,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	server.GET("/", func(context *Context) {
 		context.JSON(200, H{
-			"message": os.Getenv("message"),
+			"message": "Hello go x vercel",
 		})
 	})
 	server.GET("/hello", func(context *Context) {
